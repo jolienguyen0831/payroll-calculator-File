@@ -1,18 +1,18 @@
-"ID" | "Name" | "GrossPay"
+[
+"ID": 10,"Name": Dana Wyatt,"Gross Pay": $656.25
 
-10 | Dana Wyatt | $656.25
+"ID": 20,"Name": Ezra Aiden,"Gross Pay": $284.75
 
-20 | Ezra Aiden | $284.75
+"ID": 30,"Name": Brittany Thibbs,"Gross Pay": $660.0
 
-30 | Brittany Thibbs | $660.0
+"ID": 40,"Name": Zephaniah Hughes,"Gross Pay": $20.0
 
-40 | Zephaniah Hughes | $20.0
+"ID": 50,"Name": Caylee Callahan,"Gross Pay": $542.5
 
-50 | Caylee Callahan | $542.5
+"ID": 60,"Name": Zane Stephens,"Gross Pay": $607.5
 
-60 | Zane Stephens | $607.5
+"ID": 70,"Name": Maverick Cummings,"Gross Pay": $420.75
 
-70 | Maverick Cummings | $420.75
+"ID": 80,"Name": Kamari Todd,"Gross Pay": $464.0
 
-80 | Kamari Todd | $464.0
-
+]

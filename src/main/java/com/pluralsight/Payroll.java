@@ -26,17 +26,32 @@ public class Payroll {
             }
             System.out.print("Please enter a name of file you want to create:");
             String nameFileToWrite = input.nextLine();
+
             FileWriter writer = new FileWriter(nameFileToWrite);
             BufferedWriter bufWriter = new BufferedWriter(writer);
-            writer.write("\"ID\" | \"Name\" | \"GrossPay\"\n\n");
-            String text;
-            for (int j = 0; j < i; j++) {
-                text = String.format("%s | %s | $%s%n",
-                        employees[j].getEmployeeId(),
-                        employees[j].getName(),
-                        employees[j].getGrossPay());
-                bufWriter.write(text);
-                bufWriter.newLine();
+            if(nameFileToWrite.endsWith("json")){
+                bufWriter.write("[\n");
+                String text;
+                for (int j = 0; j < i; j++) {
+                    text = String.format("\"ID\": %s,\"Name\": %s,\"Gross Pay\": $%s%n",
+                            employees[j].getEmployeeId(),
+                            employees[j].getName(),
+                            employees[j].getGrossPay());
+                    bufWriter.write(text);
+                    bufWriter.newLine();
+                }
+                bufWriter.write("]");
+            }else{
+                writer.write("\"ID\" | \"Name\" | \"GrossPay\"\n\n");
+                String text;
+                for (int j = 0; j < i; j++) {
+                    text = String.format("%s | %s | $%s%n",
+                            employees[j].getEmployeeId(),
+                            employees[j].getName(),
+                            employees[j].getGrossPay());
+                    bufWriter.write(text);
+                    bufWriter.newLine();
+                }
             }
 
             bufferedReader.close();
