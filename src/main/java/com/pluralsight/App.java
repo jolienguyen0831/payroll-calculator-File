@@ -67,7 +67,6 @@ public class App {
             System.out.print("Please enter your name:");
             String userEnterName = input.nextLine();
             for (int j = 0; j < i; j++) {
-
                 if (userEnterName.equalsIgnoreCase(employees[j].getName())) {
                     displayEmployee(employees[j]);
                     found = true;
