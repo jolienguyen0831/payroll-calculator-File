@@ -12,21 +12,18 @@ public class App {
     public static void main(String[] args) {
         Employee[] employees = new Employee[20];
         int i = 0;
+
         try {
             FileReader fileReader = new FileReader("employees.csv");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             bufferedReader.readLine();
 
             String line = bufferedReader.readLine();
-
             while (line != null) {
-
                 createEmployeesArray(line, employees, i);
-
                 line = bufferedReader.readLine();
                 i++;
             }
-
             bufferedReader.close();
 
         } catch (IOException e) {
@@ -52,7 +49,6 @@ public class App {
             System.out.print("Please enter your ID:");
             byte userEnterID = input.nextByte();
             for (int j = 0; j < i; j++) {
-
                 if (userEnterID == employees[j].getEmployeeId()) {
                     displayEmployee(employees[j]);
                     found = true;
@@ -67,7 +63,6 @@ public class App {
 
     private static void checkPrintEmployeeName(int i, Employee[] employees) {
         boolean found = false;
-
         do {
             System.out.print("Please enter your name:");
             String userEnterName = input.nextLine();
