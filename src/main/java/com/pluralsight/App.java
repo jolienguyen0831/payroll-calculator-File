@@ -39,15 +39,16 @@ public class App {
                 Please enter your choice:""");
         byte userChoice = input.nextByte();
         input.nextLine();
-        switch (userChoice){
-            case 1 ->checkPrintEmployeeID(i,employees);
+        switch (userChoice) {
+            case 1 -> checkPrintEmployeeID(i, employees);
             case 2 -> checkPrintEmployeeName(i, employees);
         }
     }
+
     private static void checkPrintEmployeeID(int i, Employee[] employees) {
         boolean found = false;
 
-        do{
+        do {
             System.out.print("Please enter your ID:");
             byte userEnterID = input.nextByte();
             for (int j = 0; j < i; j++) {
@@ -56,20 +57,18 @@ public class App {
                     displayEmployee(employees[j]);
                     found = true;
                     break;
-                } else {
-                    found = false;
                 }
             }
-            if(!found) {
+            if (!found) {
                 System.out.println("ID not found. Try again!");
             }
-        }while(!found);
+        } while (!found);
     }
 
     private static void checkPrintEmployeeName(int i, Employee[] employees) {
         boolean found = false;
 
-        do{
+        do {
             System.out.print("Please enter your name:");
             String userEnterName = input.nextLine();
             for (int j = 0; j < i; j++) {
@@ -78,14 +77,12 @@ public class App {
                     displayEmployee(employees[j]);
                     found = true;
                     break;
-                } else {
-                    found = false;
                 }
             }
-        if(!found) {
-            System.out.println("Name not found. Try again!");
-        }
-        }while(!found);
+            if (!found) {
+                System.out.println("Name not found. Try again!");
+            }
+        } while (!found);
     }
 
     private static void createEmployeesArray(String line, Employee[] employees, int i) {
