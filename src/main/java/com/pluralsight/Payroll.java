@@ -28,7 +28,7 @@ public class Payroll {
             String nameFileToWrite = input.nextLine();
             FileWriter writer = new FileWriter(nameFileToWrite);
             BufferedWriter bufWriter = new BufferedWriter(writer);
-            writer.write("ID | Name | GrossPay\n\n");
+            writer.write("\"ID\" | \"Name\" | \"GrossPay\"\n\n");
             String text;
             for (int j = 0; j < i; j++) {
                 text = String.format("%s | %s | $%s%n",
