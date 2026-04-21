@@ -2,7 +2,6 @@ package com.pluralsight;
 
 
 import java.io.BufferedReader;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -38,7 +37,33 @@ public class App {
                 1. ID
                 2. Name
                 Please enter your choice:""");
-        checkPrintEmployeeName(i, employees);
+        byte userChoice = input.nextByte();
+        input.nextLine();
+        switch (userChoice){
+            case 1 ->checkPrintEmployeeID(i,employees);
+            case 2 -> checkPrintEmployeeName(i, employees);
+        }
+    }
+    private static void checkPrintEmployeeID(int i, Employee[] employees) {
+        boolean found = false;
+
+        do{
+            System.out.print("Please enter your ID:");
+            byte userEnterID = input.nextByte();
+            for (int j = 0; j < i; j++) {
+
+                if (userEnterID == employees[j].getEmployeeId()) {
+                    displayEmployee(employees[j]);
+                    found = true;
+                    break;
+                } else {
+                    found = false;
+                }
+            }
+            if(!found) {
+                System.out.println("ID not found. Try again!");
+            }
+        }while(!found);
     }
 
     private static void checkPrintEmployeeName(int i, Employee[] employees) {
